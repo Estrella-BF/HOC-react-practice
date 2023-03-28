@@ -3,23 +3,28 @@ import withCounter from "./withCounter.js"
 
 
 function HoverIncrease(props) {
-    const [fontSize, setFontSize] = useState(10);
+    // const [fontSize, setFontSize] = useState(10);
+    const { counterNameAttribute, incrementWeight, fontSize,fontWeight, incrementFontSize } = props; 
+
+    const MouseOverEvent = () => {
+      incrementWeight();
+      incrementFontSize();
+    }
+
     return (
       <div>
         {/*This time, instead of listening to clicks,*/}
         {/*Listen to hover events instead*/}
-        <button onMouseOver={() => setFontSize((size) => size + 1)}>
+        <button onMouseOver={() => MouseOverEvent() }>
           Increase on hover
         </button>
-        <p style={{ fontSize }}>
-          Size of font in onMouseOver function: {fontSize}
-        </p>
+      <p style={{ fontSize, fontWeight }}>Size: {fontSize}, Weight: {fontWeight}</p>
 
         <div>
       {/*Further code..*/}
-      <p>Value of 'name' in ClickIncrease: {props.name}</p>
+      <p>Value of '{props.nameAttribute}': {counterNameAttribute}</p>
     </div>
     </div>
   );
 }
-export default withCounter(HoverIncrease);
+export default withCounter(HoverIncrease, 5);
