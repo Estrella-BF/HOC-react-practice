@@ -14,7 +14,12 @@ function HoverIncrease(props) {
         <p style={{ fontSize }}>
           Size of font in onMouseOver function: {fontSize}
         </p>
-      </div>
-    );
-  }
-  export default withCounter(HoverIncrease);
+
+        <div>
+      {/*Further code..*/}
+      <p>Value of 'name' in ClickIncrease: {props.name}</p>
+    </div>
+    </div>
+  );
+}
+export default withCounter(HoverIncrease);

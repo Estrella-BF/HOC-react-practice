@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const UpdatedComponent = (OriginalComponent) => {
-    console.log('with counter', OriginalComponent);
+
   function NewComponent(props) {
-    console.log('with props', props);
-  //render OriginalComponent and pass on its props.
-    return <OriginalComponent />;
+
+    const [counter, setCounter] = useState(10); //create a Hook
+    return <OriginalComponent 
+    counterNameAttribute={counter} //export our counter Hook
+    incrementCounterNameAttribute={() => setCounter((counter) => counter + 1)}
+    nameAttribute="Pollosssss"/>;
   }
+
   return NewComponent;
 };
 export default UpdatedComponent;
