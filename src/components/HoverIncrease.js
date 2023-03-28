@@ -3,8 +3,8 @@ import withCounter from "./withCounter.js"
 
 
 function HoverIncrease(props) {
-    // const [fontSize, setFontSize] = useState(10);
-    const { counterNameAttribute, incrementWeight, fontSize,fontWeight, incrementFontSize } = props; 
+
+    const { counterNameAttribute, incrementWeight, fontSizeValue,fontWeightValue, incrementFontSize } = props; 
 
     const MouseOverEvent = () => {
       incrementWeight();
@@ -18,7 +18,7 @@ function HoverIncrease(props) {
         <button onMouseOver={() => MouseOverEvent() }>
           Increase on hover
         </button>
-      <p style={{ fontSize, fontWeight }}>Size: {fontSize}, Weight: {fontWeight}</p>
+      <p style={{ fontSize: fontSizeValue, fontWeight: fontWeightValue }}>Size: {fontSizeValue}, Weight: {fontWeightValue}</p>
 
         <div>
       {/*Further code..*/}

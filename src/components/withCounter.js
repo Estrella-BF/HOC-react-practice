@@ -9,8 +9,8 @@ const UpdatedComponent = (OriginalComponent, increaseCount) => {
     const [ fontWeight, setFontWeight] = useState(100);
     return <OriginalComponent 
     counterNameAttribute={counter} //export our counter Hook
-    fontWeight={fontWeight}
-    fontSize={fontSize}
+    fontWeightValue={fontWeight}
+    fontSizeValue={fontSize}
     incrementWeight={() => setFontWeight((fontWeight) => fontWeight +100)}
     incrementFontSize={() => setFontSize((fontSize) => fontSize + 1)}
     nameAttribute="Pollosssss"/>;

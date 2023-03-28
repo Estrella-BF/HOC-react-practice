@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import withCounter from "./withCounter.js"
 
 function ClickIncrease(props) {
-  //const [fontSize, setFontSize] = useState(10); //set initial value of Hook to 10.
-  
-  const { counterNameAttribute, incrementWeight, fontSize, fontWeight, incrementFontSize } = props; 
+
+  const { counterNameAttribute, incrementWeight, fontSizeValue, fontWeightValue, incrementFontSize } = props; 
 
   const clickEvent = () => {
     incrementWeight();
@@ -19,12 +18,12 @@ function ClickIncrease(props) {
       </button>
       {/*Set the font size of this text to the fontSize variable.*/}
       {/*Furthermore, display its value as well.*/}
-      <p style={{ fontSize, fontWeight }}>Size: {fontSize}, Weight: {fontWeight}</p>
+      <p style={{ fontSize: fontSizeValue, fontWeight: fontWeightValue }}>Size: {fontSizeValue}, Weight: {fontWeightValue}</p>
       <div>
-    {/* Further code..*/}
-    {/*Now render the value of the 'name' prop */ }
-    <p> Value of '{props.nameAttribute}': {counterNameAttribute}</p>
-  </div>
+        {/* Further code..*/}
+        {/*Now render the value of the 'name' prop */ }
+        <p> Value of '{props.nameAttribute}': {counterNameAttribute}</p>
+      </div>
     </div>
     
   );
